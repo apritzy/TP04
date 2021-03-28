@@ -1,0 +1,23 @@
+<p>catalogue works!</p>
+
+<br/>
+<button (click)="onClickBackend()"> Voir la liste des produits </button>
+<br/>
+
+<br/>
+<div  *ngFor = "let o of observable5$ | async">
+    {{o.titre}} / {{o.prix}} 
+</div>
+<br/>
+<br/>
+<button (click)="onClick()"> Filtrer </button>
+<br/>
+<br/>
+
+<div *ngFor="let l of tabproduit">
+    {{l.titre}} / {{l.prix}}
+</div>
+
+<div  *ngFor = "let o of observable5$ | async">
+    {{o.titre}} / {{o.prix}} - <button (click)="addPanier(o.ref)">Ajout Panier</button>
+</div>
