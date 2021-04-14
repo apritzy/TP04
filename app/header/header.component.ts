@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngxs/store';
+import { PanierState } from '../../shared/states/panier-state';
 
 
 @Component({
@@ -9,7 +10,7 @@ import { Store } from '@ngxs/store';
 })
 export class HeaderComponent implements OnInit {
 
-  nom : string = "TP04";
+  nom : string = "Boutique";
   
   constructor(private store : Store) { }
 
@@ -17,6 +18,8 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit(): void {
     this.store.select(state=>state.panier.panier.length).subscribe (l => this.nbElementPanier = l);
+    //this.store.select(this.panierState.getNbReference ());
+
   }
 
 }

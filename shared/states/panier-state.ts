@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, setTestabilityGetter } from '@angular/core';
 import { Action , State, StateContext,Selector } from '@ngxs/store';
 import { AddReference,DelReference } from '../actions/panier.actions';
 import { PanierStateModel } from './panier-state-model';
@@ -31,7 +31,8 @@ export class PanierState {
             {getState, patchState } :  StateContext<PanierStateModel>, 
             { payload }: DelReference) {
             const state = getState();
-            // TODO : Supprimer la référence passée en paramètre
+
+            // Supprimer la référence passée en paramètre
             patchState({panier : [...state.panier]});
     }
 

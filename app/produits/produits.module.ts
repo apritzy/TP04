@@ -1,20 +1,26 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterModule, Routes } from '@angular/router';
+
 import { DetailComponent } from './detail/detail.component';
 import { CatalogueComponent } from './catalogue/catalogue.component';
+import { PanierComponent } from './panier/panier.component';
 
-import { RouterModule, Routes } from '@angular/router';
+
+
 
 const appRoutes : Routes = [
   {path:'catalogue',component:CatalogueComponent},
   {path: 'detail/:id', component: DetailComponent },
+  {path: 'panier', component: PanierComponent}
 ]
 
 
 @NgModule({
   declarations: [
    CatalogueComponent,
-    DetailComponent
+    DetailComponent,
+    PanierComponent
   ],
   imports: [
     CommonModule,
